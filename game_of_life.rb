@@ -42,13 +42,13 @@ class GameOfLife
     end
 
     def alive_in_next_gen?
-      alive && [2, 3].include?(live_neighbour_count) ||
-        !alive && live_neighbour_count == 3
+      alive? && [2, 3].include?(live_neighbour_count) ||
+        !alive? && live_neighbour_count == 3
     end
 
     private
 
-    def alive
+    def alive?
       @board[@row, @col]
     end
 
